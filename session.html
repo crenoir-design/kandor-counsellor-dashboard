@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kandor – Sessions</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Inter font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Material Icons (filled + outlined) -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <!-- Theme variables -->
+  <style type="text/tailwindcss">
+    :root {
+      --bg-primary: #1A1625;
+      --bg-secondary: #2A2438;
+      --bg-tertiary: #3E3852;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --accent-purple: #9F7AEA;
+      --accent-purple-light: #B89AF6;
+      --card-border: #3A334E;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    .sidebar {
+      width: 256px;
+      background-color: var(--bg-secondary);
+    }
+    .sidebar .nav-item {
+      justify-content: flex-start;
+    }
+    .sidebar .nav-text {
+      display: inline;
+    }
+  </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar flex flex-col h-full p-4 space-y-4 shadow-2xl z-20">
+    <div class="text-2xl font-bold text-white mb-4">kandor</div>
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">dashboard</span>
+        <span class="nav-text ml-4 font-medium">Dashboard</span>
+      </a>
+      <a href="student.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">people</span>
+        <span class="nav-text ml-4 font-medium">Students</span>
+      </a>
+      <a href="session.html" class="nav-item flex items-center p-3 rounded-lg bg-[var(--accent-purple)] text-white">
+        <span class="material-icons text-2xl">event</span>
+        <span class="nav-text ml-4 font-medium">Sessions</span>
+      </a>
+      <a href="messages.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">chat</span>
+        <span class="nav-text ml-4 font-medium">Messages</span>
+      </a>
+      <a href="settings.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">settings</span>
+        <span class="nav-text ml-4 font-medium">Settings</span>
+      </a>
+    </nav>
+    <div class="flex-grow"></div>
+    <div class="p-4 bg-orange-500/10 border border-orange-500/30 rounded-lg text-center">
+      <h4 class="font-bold text-orange-400">Future Chatbot Module</h4>
+      <p class="text-sm text-orange-300 mt-1">AI-powered collaboration coming soon!</p>
+    </div>
+    <a href="#" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+      <span class="material-icons text-2xl">logout</span>
+      <span class="nav-text ml-4 font-medium">Logout</span>
+    </a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 flex flex-col overflow-y-auto">
+
+    <!-- HEADER -->
+    <header
+      class="bg-[var(--bg-secondary)] border-b border-[var(--card-border)]
+             p-4 flex justify-between items-center sticky top-0 z-10"
+    >
+      <h2 class="text-2xl font-semibold text-[var(--text-primary)]">
+        Sessions
+      </h2>
+      <div class="flex items-center space-x-4">
+        <div
+          class="flex items-center space-x-2 bg-[var(--bg-tertiary)]
+                 p-2 rounded-lg"
+        >
+          <button
+            class="px-3 py-1 text-sm rounded-md bg-[var(--bg-secondary)]
+                   text-[var(--text-primary)] shadow"
+          >EN</button>
+          <button
+            class="px-3 py-1 text-sm rounded-md text-[var(--text-secondary)]"
+          >AR</button>
+        </div>
+        <button class="p-2 rounded-full hover:bg-[var(--bg-tertiary)]">
+          <span class="material-icons-outlined text-[var(--text-primary)]">
+            notifications
+          </span>
+        </button>
+        <div class="flex items-center">
+          <img
+            class="w-10 h-10 rounded-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnPCdbt7UO5R3pO1xIVLZUQ4e_yahC359Yq-OHBAv1dAyZ4Yl_0t_L0jG30OrzvjIUunY3JIviNiOX_p0-8jIchhx9QKAlB_CVhIvzPtCwBc4APkxvVNRZmbrX4fH04y_NxSu7ZePS8j2dAfqfZ1X6F5O2i6VqL96ZYKQFa99XGrjDp9Sc4LuxHd9eicYd2s_5wKxFhAX3uxlyjOFyY3jffaD4vA2lfwxP2tCq6ok8MF6fPxNWQ3ZOXH0eKd0hN80_pp3GXLPYvXw"
+            alt="Counselor profile"
+          />
+          <div class="ml-2">
+            <p class="text-sm font-semibold text-[var(--text-primary)]">
+              Aisha Khan
+            </p>
+            <p class="text-xs text-[var(--text-secondary)]">
+              Counselor
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- SESSIONS CONTENT -->
+    <div class="px-6 py-5">
+      <div class="layout-content-container flex flex-col max-w-[920px] mx-auto">
+        <!-- Top Bar -->
+        <div class="flex flex-wrap justify-between gap-3 p-4">
+          <p class="text-white tracking-light text-[32px] font-bold">
+            Sessions
+          </p>
+          <button
+            class="flex items-center justify-center rounded-full h-8 px-4 bg-[#2f2348] text-white text-sm font-medium"
+          >
+            + Schedule Session
+          </button>
+        </div>
+
+        <!-- AI Suggested Students -->
+        <h3 class="text-white text-lg font-bold px-4 pb-2 pt-4">
+          AI Suggested Students to Book With
+        </h3>
+        <div class="flex overflow-y-auto scrollbar-hide px-4">
+          <div class="flex items-stretch p-4 gap-3">
+            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALc4Lx6CxNxEivnFFT_Etn4tFJi5RtXF-aYhMSmbWQ6Ae7o6FlZLTMAIXI4D_dNfW1WEVNhEuulnHcTbwKNAjjp9LQftF6ZYXW32q9seEP5zVVVk2c40gsFTR8bW-EMjMmVWjwNbKmqbkEAJ4xkd1q4cq56ms2hWdWsCCENMOmmiR53jaJo0mJr5SU6WBVXa7Ojnx95lgiiYbHT5Zj96N-2EXOWatmtplxePOa-0R3ZfflpI4LYtICPTx2NLAa-DjZ1cEsQ79FyGE");'
+              ></div>
+              <div>
+                <p class="text-white text-base font-medium">Omar Hassan</p>
+                <p class="text-[#a391ca] text-sm">🚩 Needs Help</p>
+              </div>
+            </div>
+            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBQyBS630bCea2J_CEp_3ilKGYhsORTx-eYtcS-jzbTFLE99EKwkP5rqHMrfbviDEX6Hext9DXD1xbFgKm4hmSccZQnXqub9hmCrre0lp6FcBipV10qvbcZ8NMbzS525TAD5wboQZXSMptCVmDBjQ2p579N5kiKnZDrITaMRPM1AlFICeQyldDFF2L-_vpmjZN5vPwFWyNVqRRSdV92-SlQJOBXmOAmg3HJg6x6XaAWc3v5pawgPlvMZkm7rCkvCYbw_R88OlgrTwM");'
+              ></div>
+              <div>
+                <p class="text-white text-base font-medium">Fatima Al Ali</p>
+                <p class="text-[#a391ca] text-sm">On Track</p>
+              </div>
+            </div>
+            <div class="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
+              <div
+                class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
+                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBqUsT-yg8m_v9JxjxRa0kP9ZpGvsVQKTnVjo1mMjHU-4igE7XqFuPCzHEs_AX0Q52vK8k13NSSuHCmEPQaMLv4Zj8F_2aTaNmdNNodkzPtuGQ2L-zdagrjXCZL3SGxsE-J9srebDddIz5ruWnn2EkMTYDGwYq9Xqqd_fwKdyB0KxUkRfV7TbJ6W7M-nhov4hUhXLRhTAu88qp3gypJNVIXPQyHe1AYzYlB_E87LZCFUH869VC-BE8NMx6TIfU3DHf4Agglt5nBgB4");'
+              ></div>
+              <div>
+                <p class="text-white text-base font-medium">Khaled Al Mansoori</p>
+                <p class="text-[#a391ca] text-sm">🚩 Needs Help</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Today's Sessions -->
+        <h3 class="text-white text-lg font-bold px-4 pb-2 pt-8">
+          Today’s Sessions
+        </h3>
+        <div class="grid grid-cols-[40px_1fr] gap-x-2 px-4">
+          <div class="flex flex-col items-center gap-1 pt-3">
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD7ME7DzuWZQatkW0REJ8XSpmbZOXAHfZHsnldiJUFJcF85QpoHfpH6g6miPGEG_FF_8LLvgZR12zU8gt6NZwaxPCqd8ezampB4z-cFU6BnC2f3dx3TXVJzFa00cFDYG0efETCh8_Bn28JvJaNFZnCoBdOjV-GZUNHFnrUysiPEuTdRPTUwaCAcGH7TBrVpOtNke1LwNFK2DmkTYeiuQHe2NCrEPq_8e4eql7jlmgfq5-efjrQFvZfhV50QdcBWNaj9dHEVmaDwFC4");'
+            ></div>
+            <div class="w-[1.5px] bg-[#433267] h-2 grow"></div>
+          </div>
+          <div class="flex flex-1 flex-col py-3">
+            <p class="text-white text-base font-medium">08:30 - 09:30</p>
+            <p class="text-[#a391ca] text-base">Omar Hassan - Country Finder</p>
+          </div>
+          <div class="flex flex-col items-center gap-1">
+            <div class="w-[1.5px] bg-[#433267] h-2"></div>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfJSRwTVABYj5Sg0BePni5mI_eA9EvswbmTACeelR3jCoMqWE1fbzBgrhZHodca5cpMG1KEewZWb1NwseqokImQhOtwHNt6VPVQdOzeRe4VKsDDOmE0qE652-KTAhCNHxlsqpNvE5qKXu2JDjjAMVs4PIB8wn99hdZe3U0XmM6GXLRAVFH7CPwk0c-P7TL0fwH7Wuh2g8WaBukAEw4pq3mmOCk8jvTwlFn14CSPtuicHrZhq2_aG6aQ70r4Aw2H_Jamqx0qDJK0jc");'
+            ></div>
+            <div class="w-[1.5px] bg-[#433267] h-2 grow"></div>
+          </div>
+          <div class="flex flex-1 flex-col py-3">
+            <p class="text-white text-base font-medium">10:00 - 11:00</p>
+            <p class="text-[#a391ca] text-base">Fatima Al Ali - Career Review</p>
+          </div>
+          <div class="flex flex-col items-center gap-1 pb-3">
+            <div class="w-[1.5px] bg-[#433267] h-2"></div>
+            <div
+              class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-6"
+              style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRB2zkyHJt5VJPZqGJCfxsxQBvSoOAbJ_FrGx3OzlJJXtAXjPf5ZxU-6J_bnETX5rKQqwwPfGayKnis51LFDTAxOgcVnrBkJV80u5i0Fs25x8RHgh5E4316ZR-_7aOoIg4hRvMu-5idp_vpAw-aNkrM__dnp1tLMjfpvDjF_LGQBLFFyHQnczqQSCdMowwvHyu9Zi7XKd_OBQWn0oIw2oOVHSVLYEPp5Svnn14y3Oz4SwdX7YvInUnN070yZDwKWtT7gGbVVmoXRg");'
+            ></div>
+          </div>
+          <div class="flex flex-1 flex-col py-3">
+            <p class="text-white text-base font-medium">14:00 - 15:00</p>
+            <p class="text-[#a391ca] text-base">Khaled Al Mansoori - SOP Review</p>
+          </div>
+        </div>
+        <!-- Notes Editor -->
+        <h3 class="text-white text-lg font-bold px-4 pb-2 pt-4">
+          Notes for: Omar Hassan · Country Finder Review · 08:30-09:30
+        </h3>
+        <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+          <textarea
+            placeholder="Start typing your notes here..."
+            class="w-full resize-none rounded-xl bg-[var(--bg-secondary)] text-white p-4 focus:outline-none"
+            rows="4"
+          ></textarea>
+        </div>
+        <p class="text-[#a391ca] text-sm text-center pb-3">✅ Notes Saved</p>
+      </div>
+    </div>
+
+        <!-- List / Calendar Toggle -->
+        <div class="flex px-4 py-3">
+          <div class="flex h-10 flex-1 items-center justify-center rounded-full bg-[#2f2348] p-1">
+            <label class="flex cursor-pointer h-full grow items-center justify-center px-2 rounded-full text-[#a391ca] text-sm font-medium">
+              <span class="truncate">List</span>
+              <input type="radio" class="invisible" checked/>
+            </label>
+            <label class="flex cursor-pointer h-full grow items-center justify-center px-2 rounded-full text-[#a391ca] text-sm font-medium">
+              <span class="truncate">Calendar</span>
+              <input type="radio" class="invisible"/>
+            </label>
+          </div>
+        </div>
+
+        <!-- Upcoming Sessions -->
+        <h3 class="text-white text-lg font-bold px-4 pb-2 pt-4">
+          Upcoming Sessions
+        </h3>
+        <div class="flex flex-col space-y-2 px-4">
+          <div class="flex items-center gap-4 bg-[var(--bg-primary)] px-4 py-2 rounded-lg">
+            <div class="w-14 h-14 bg-center bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2Sg_GNepmwZLJ0UKkMVTx4ICM_u4N-uKDJ3-GgEkbZ5Kes1TEvRkvX4wjTTymwftv8ta9_NeitvDNxF9wtoKjGz3klQytlyeY5MpG4hZKWaZ4cTDZaIG2ZiuVGlMdKE2yzHUkhpnb3F_LFjsU304xEg23nyv9lv7VegOkiQqm6Wx7CP37pMzezBZC1XAhYA21ty2lBxhvBzcgyyCHKZy5mCLxbIU5AIbddXilHyWp1B48dMz7gCrUsUKzMzj89kOkbZVk3x8C2mo");'></div>
+            <div>
+              <p class="text-white font-medium">Mon, Jul 21 · Omar Hassan</p>
+              <p class="text-[#a391ca] text-sm">Country Finder Review · 09:00-10:00</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 bg-[var(--bg-primary)] px-4 py-2 rounded-lg">
+            <div class="w-14 h-14 bg-center bg-cover rounded-full" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCC9U5q9QraFht5-mKy6UL-jromnwByQpV5SS58ibsyarmEPKAbIk4GOMvKTKw2EukEq0FzJhdQJM3zv5NuLWzIoyY2fIIcIYNVF1KpKnOJ-eHLQ8AQ5FW7zreXVRFNR2xJElnU-Q0akCIRZ1LHZ4EPSkWb7dKFhrQ6lifgfEeZFiKF49c1VIHB-14pgOryIMh6yJy7miA55_b4vRIPleBQ3zN_8I69v7sFqylDiaSiH9cS6khlpGWY9Kn86DatjF-SXzkdVlSF64");'></div>
+            <div>
+              <p class="text-white font-medium">Tue, Jul 22 · Fatima Al Ali</p>
+              <p class="text-[#a391ca] text-sm">Career Finder Review · 11:00-12:00</p>
+            </div>
+          </div>
+        </div>
+
+        
+
+  </main>
+</body>
+</html>

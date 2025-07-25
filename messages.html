@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kandor – Messages</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Inter font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+
+  <style type="text/tailwindcss">
+    :root {
+      --bg-primary: #1A1625;
+      --bg-secondary: #2A2438;
+      --bg-tertiary: #3E3852;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --accent-purple: #9F7AEA;
+      --accent-purple-light: #B89AF6;
+      --card-border: #3A334E;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    .sidebar { width:256px; background:var(--bg-secondary); }
+    .sidebar .nav-item { justify-content:flex-start; }
+    .sidebar .nav-text { display:inline; }
+  </style>
+</head>
+<body class="flex h-screen overflow-hidden">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar flex flex-col h-full p-4 space-y-4 shadow-2xl z-20">
+    <div class="text-2xl font-bold text-white mb-4">kandor</div>
+    <nav class="flex flex-col space-y-2">
+      <a href="index.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">dashboard</span>
+        <span class="nav-text ml-4 font-medium">Dashboard</span>
+      </a>
+      <a href="student.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">people</span>
+        <span class="nav-text ml-4 font-medium">Students</span>
+      </a>
+      <a href="session.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">event</span>
+        <span class="nav-text ml-4 font-medium">Sessions</span>
+      </a>
+      <a href="messages.html" class="nav-item flex items-center p-3 rounded-lg bg-[var(--accent-purple)] text-white">
+        <span class="material-icons text-2xl">chat</span>
+        <span class="nav-text ml-4 font-medium">Messages</span>
+      </a>
+      <a href="settings.html" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+        <span class="material-icons text-2xl">settings</span>
+        <span class="nav-text ml-4 font-medium">Settings</span>
+      </a>
+    </nav>
+    <div class="flex-grow"></div>
+    <div class="p-4 bg-orange-500/10 border border-orange-500/30 rounded-lg text-center">
+      <h4 class="font-bold text-orange-400">Future Chatbot Module</h4>
+      <p class="text-sm text-orange-300 mt-1">AI-powered collaboration coming soon!</p>
+    </div>
+    <a href="#" class="nav-item flex items-center p-3 rounded-lg hover:bg-[var(--bg-tertiary)] text-white">
+      <span class="material-icons text-2xl">logout</span>
+      <span class="nav-text ml-4 font-medium">Logout</span>
+    </a>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="flex-1 flex flex-col overflow-hidden relative">
+
+    <!-- HEADER -->
+    <header class="bg-[var(--bg-secondary)] border-b border-[var(--card-border)] p-4 flex justify-between items-center sticky top-0 z-60">
+      <h2 class="text-2xl font-semibold text-[var(--text-primary)]">Messages</h2>
+      <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-2 bg-[var(--bg-tertiary)] p-2 rounded-lg">
+          <button class="px-3 py-1 text-sm rounded-md bg-[var(--bg-secondary)] text-[var(--text-primary)]">EN</button>
+          <button class="px-3 py-1 text-sm rounded-md text-[var(--text-secondary)]">AR</button>
+        </div>
+        <button class="p-2 rounded-full hover:bg-[var(--bg-tertiary)]">
+          <span class="material-icons-outlined text-[var(--text-primary)]">notifications</span>
+        </button>
+        <div class="flex items-center">
+          <img
+            class="w-10 h-10 rounded-full object-cover"
+            src="https://i.pravatar.cc/100?img=5"
+            alt="Counselor profile"
+          />
+          <div class="ml-2">
+            <p class="text-sm font-semibold text-[var(--text-primary)]">Aisha Khan</p>
+            <p class="text-xs text-[var(--text-secondary)]">Counselor</p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- TWO-COLUMN LAYOUT -->
+    <div class="flex-1 flex overflow-hidden">
+
+      <!-- LEFT PANEL: Conversation List -->
+      <div class="w-96 bg-[var(--bg-primary)] border-r border-[var(--card-border)] overflow-y-auto">
+        <!-- Tabs -->
+        <div class="pb-3">
+          <div class="flex border-b border-[#433267] px-4 gap-8">
+            <a class="flex flex-col items-center justify-center border-b-2 border-[var(--accent-purple)] text-white pb-3 pt-4" href="#">
+              <span class="text-sm font-bold">Students</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-[var(--text-secondary)] pb-3 pt-4" href="#">
+              <span class="text-sm font-bold">Parents</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-[var(--text-secondary)] pb-3 pt-4" href="#">
+              <span class="text-sm font-bold">Scheduled</span>
+            </a>
+            <a class="flex flex-col items-center justify-center text-[var(--text-secondary)] pb-3 pt-4" href="#">
+              <span class="text-sm font-bold">Templates</span>
+            </a>
+          </div>
+        </div>
+        <!-- Conversation Previews -->
+        <div class="space-y-2">
+          <div class="flex items-center gap-4 px-4 py-2 bg-[var(--bg-primary)] justify-between">
+            <div class="flex items-center gap-4">
+              <img class="w-14 h-14 rounded-full" src="https://i.pravatar.cc/80?img=1" alt="Sophia Clark"/>
+              <div>
+                <p class="text-white font-medium">Sophia Clark</p>
+                <p class="text-[var(--text-secondary)] text-sm line-clamp-2">Hi, I'm interested in studying abroad...</p>
+              </div>
+            </div>
+            <p class="text-[var(--text-secondary)] text-sm">2d</p>
+          </div>
+          <div class="flex items-center gap-4 px-4 py-2 justify-between hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <img class="w-14 h-14 rounded-full" src="https://i.pravatar.cc/80?img=2" alt="Ethan Carter"/>
+              <div>
+                <p class="text-white font-medium">Ethan Carter</p>
+                <p class="text-[var(--text-secondary)] text-sm line-clamp-2">Thank you for your help!</p>
+              </div>
+            </div>
+            <p class="text-[var(--text-secondary)] text-sm">1w</p>
+          </div>
+          <div class="flex items-center gap-4 px-4 py-2 justify-between hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <img class="w-14 h-14 rounded-full" src="https://i.pravatar.cc/80?img=3" alt="Olivia Bennett"/>
+              <div>
+                <p class="text-white font-medium">Olivia Bennett</p>
+                <p class="text-[var(--text-secondary)] text-sm line-clamp-2">I have some questions about the application process.</p>
+              </div>
+            </div>
+            <p class="text-[var(--text-secondary)] text-sm">2w</p>
+          </div>
+          <div class="flex items-center gap-4 px-4 py-2 justify-between hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <img class="w-14 h-14 rounded-full" src="https://i.pravatar.cc/80?img=4" alt="Mr. & Mrs. Thompson"/>
+              <div>
+                <p class="text-white font-medium">Mr. & Mrs. Thompson</p>
+                <p class="text-[var(--text-secondary)] text-sm line-clamp-2">My son is interested in studying abroad...</p>
+              </div>
+            </div>
+            <p class="text-[var(--text-secondary)] text-sm">3w</p>
+          </div>
+          <div class="flex items-center gap-4 px-4 py-2 justify-between hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <img class="w-14 h-14 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="Noah Parker"/>
+              <div>
+                <p class="text-white font-medium">Noah Parker</p>
+                <p class="text-[var(--text-secondary)] text-sm line-clamp-2">I'm looking for information about scholarships.</p>
+              </div>
+            </div>
+            <p class="text-[var(--text-secondary)] text-sm">1m</p>
+          </div>
+          <div class="flex items-center gap-4 px-4 py-2 justify-between hover:bg-[var(--bg-tertiary)]/50 transition-colors">
+            <div class="flex items-center gap-4">
+              <img class="w-14 h-14 rounded-full" src="https://i.pravatar.cc/80?img=6" alt="Ava Mitchell"/>
+              <div>
+                <p class="text-white font-medium">Ava Mitchell</p>
+                <p class="text-[var(--text-secondary)] text-sm line-clamp-2">Can you help me with my essay?</p>
+              </div>
+            </div>
+            <p class="text-[var(--text-secondary)] text-sm">1m</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL: Chat Detail -->
+      <div class="flex-1 flex flex-col overflow-y-auto">
+
+        <!-- Conversation Header -->
+        <div class="px-4 py-3 border-b border-[var(--card-border)] bg-[var(--bg-primary)] flex items-center gap-4 sticky top-0 z-10">
+          <button class="text-[var(--text-secondary)] hover:text-white">
+            <span class="material-icons">arrow_back</span>
+          </button>
+          <img class="w-12 h-12 rounded-full" src="https://i.pravatar.cc/100?img=1" alt="Sophia Clark"/>
+          <div>
+            <h3 class="text-white text-lg font-bold">Sophia Clark</h3>
+          </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="p-4 space-y-4 flex-1 overflow-y-auto">
+          <!-- 1: Incoming -->
+          <div class="flex items-start gap-3">
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=1" alt="Sophia"/>
+            <div class="bg-[var(--bg-secondary)] text-white px-4 py-2 rounded-xl max-w-[60%]">
+              Hi, I'm interested in studying abroad and would like to know more about the process.
+            </div>
+          </div>
+          <!-- 2: Outgoing -->
+          <div class="flex items-start gap-3 justify-end">
+            <div class="bg-[var(--accent-purple)] text-white px-4 py-2 rounded-xl max-w-[60%]">
+              Hi Sophia, I’m happy to help! What are your goals and interests?
+            </div>
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="Counselor"/>
+          </div>
+          <!-- 3 -->
+          <div class="flex items-start gap-3">
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=1" alt="Sophia"/>
+            <div class="bg-[var(--bg-secondary)] text-white px-4 py-2 rounded-xl max-w-[60%]">
+              I’m considering business programs—what are the top schools in the US?
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="flex items-start gap-3 justify-end">
+            <div class="bg-[var(--accent-purple)] text-white px-4 py-2 rounded-xl max-w-[60%]">
+              Great choice. Wharton, Harvard Biz, and Stanford GSB are top picks. Any preference?
+            </div>
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="Counselor"/>
+          </div>
+          <!-- 5 -->
+          <div class="flex items-start gap-3">
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=1" alt="Sophia"/>
+            <div class="bg-[var(--bg-secondary)] text-white px-4 py-2 rounded-xl max-w-[60%]">
+              I prefer East Coast, maybe Wharton. What about application deadlines?
+            </div>
+          </div>
+          <!-- 6 -->
+          <div class="flex items-start gap-3 justify-end">
+            <div class="bg-[var(--accent-purple)] text-white px-4 py-2 rounded-xl max-w-[60%]">
+              Wharton’s Early Action is Nov 1; Regular is Jan 5. Need help preparing your SOP?
+            </div>
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="Counselor"/>
+          </div>
+        </div>
+
+        <!-- Composer -->
+        <div class="px-4 py-3 bg-[var(--bg-primary)] border-t border-[var(--card-border)]">
+          <div class="flex items-center gap-3">
+            <img class="w-10 h-10 rounded-full" src="https://i.pravatar.cc/80?img=5" alt="Counselor"/>
+            <div class="flex-1 flex">
+              <input
+                class="flex-1 bg-[var(--bg-secondary)] text-white px-4 py-2 rounded-l-xl focus:outline-none"
+                placeholder="Type a message..."
+                type="text"
+              />
+              <button class="bg-[var(--accent-purple)] px-4 py-2 rounded-r-xl text-white font-medium">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<div id="comingSoonOverlay" class="absolute top-[80px] bottom-0 left-0 right-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 pointer-events-none">
+  <div class="text-center space-y-4 px-6">
+    <h1 class="text-4xl font-bold text-white">🚧 Coming Soon!</h1>
+    <p class="text-lg text-gray-300">Collaborative Chatbot Module under construction</p>
+    <p class="text-sm text-gray-400">We’re building something powerful to help you communicate smarter.</p>
+  </div>
+</div>
+</div>
+
+  </main>
+
+</body>
+</html>

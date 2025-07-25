@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kandor – Settings</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?display=swap&amp;family=Inter:wght@400;500;600;700&amp;family=Material+Icons"
+  />
+
+  <!-- Material Icons -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+
+  <!-- NEW: load the Outlined set too -->
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Theme & Sidebar Styles -->
+  <style type="text/tailwindcss">
+    :root {
+      --bg-primary: #1A1625;
+      --bg-secondary: #2A2438;
+      --bg-tertiary: #3E3852;
+      --text-primary: #F9FAFB;
+      --text-secondary: #D1D5DB;
+      --accent-purple: #9F7AEA;
+      --accent-purple-light: #B89AF6;
+      --card-border: #3A334E;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+    }
+    .sidebar {
+      width: 256px;
+      background-color: var(--bg-secondary);
+    }
+    .sidebar .nav-item {
+      justify-content: flex-start;
+    }
+    .sidebar .nav-text {
+      display: inline;
+    }
+  </style>
+</head>
+
+<body class="flex h-screen overflow-hidden">
+
+  <!-- ➤ SIDEBAR -->
+  <aside class="sidebar flex flex-col h-full p-4 space-y-4 shadow-2xl z-20">
+    <div class="text-2xl font-bold text-white mb-4">kandor</div>
+    <nav class="flex flex-col space-y-2">
+      <a
+        href="index.html"
+        class="nav-item flex items-center p-3 rounded-lg text-white hover:bg-[var(--bg-tertiary)] transition-colors"
+      >
+        <span class="material-icons text-2xl">dashboard</span>
+        <span class="nav-text ml-4 font-medium">Dashboard</span>
+      </a>
+      <a
+        href="student.html"
+        class="nav-item flex items-center p-3 rounded-lg text-white hover:bg-[var(--bg-tertiary)] transition-colors"
+      >
+        <span class="material-icons text-2xl">people</span>
+        <span class="nav-text ml-4 font-medium">Students</span>
+      </a>
+      <a
+        href="session.html"
+        class="nav-item flex items-center p-3 rounded-lg text-white hover:bg-[var(--bg-tertiary)] transition-colors"
+      >
+        <span class="material-icons text-2xl">event</span>
+        <span class="nav-text ml-4 font-medium">Sessions</span>
+      </a>
+      <a
+        href="messages.html"
+        class="nav-item flex items-center p-3 rounded-lg text-white hover:bg-[var(--bg-tertiary)] transition-colors"
+      >
+        <span class="material-icons text-2xl">chat</span>
+        <span class="nav-text ml-4 font-medium">Messages</span>
+      </a>
+      <a
+        href="settings.html"
+        class="nav-item flex items-center p-3 rounded-lg bg-[var(--accent-purple)] text-white transition-colors"
+      >
+        <span class="material-icons text-2xl">settings</span>
+        <span class="nav-text ml-4 font-medium">Settings</span>
+      </a>
+    </nav>
+    <div class="flex-grow"></div>
+    <div class="p-4 bg-orange-500/10 border border-orange-500/30 rounded-lg text-center">
+      <h4 class="font-bold text-orange-400">Future Chatbot Module</h4>
+      <p class="text-sm text-orange-300 mt-1">AI-powered collaboration coming soon!</p>
+    </div>
+    <a
+      href="#"
+      class="nav-item flex items-center p-3 rounded-lg text-white hover:bg-[var(--bg-tertiary)] transition-colors"
+    >
+      <span class="material-icons text-2xl">logout</span>
+      <span class="nav-text ml-4 font-medium">Logout</span>
+    </a>
+  </aside>
+
+  <!-- ➤ MAIN CONTENT -->
+  <main class="flex-1 flex flex-col overflow-y-auto">
+
+    <!-- Updated Dark Header -->
+    <header
+      class="bg-[var(--bg-secondary)] border-b border-[var(--card-border)]
+                 p-4 flex justify-between items-center sticky top-0 z-10"
+    >
+      <h2 class="text-2xl font-semibold text-[var(--text-primary)]">Dashboard</h2>
+      <div class="flex items-center space-x-4">
+        <div
+          class="flex items-center space-x-2 bg-[var(--bg-tertiary)]
+                     p-2 rounded-lg"
+        >
+          <button
+            class="px-3 py-1 text-sm rounded-md bg-[var(--bg-secondary)]
+                       text-[var(--text-primary)] shadow"
+          >
+            EN
+          </button>
+          <button
+            class="px-3 py-1 text-sm rounded-md text-[var(--text-secondary)]"
+          >
+            AR
+          </button>
+        </div>
+        <button
+          class="p-2 rounded-full hover:bg-[var(--bg-tertiary)]"
+        >
+          <span
+            class="material-icons-outlined text-[var(--text-primary)]"
+          >
+            notifications
+          </span>
+        </button>
+        <div class="flex items-center">
+          <img
+            alt="Counselor profile picture"
+            class="w-10 h-10 rounded-full object-cover"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnPCdbt7UO5R3pO1xIVLZUQ4e_yahC359Yq-OHBAv1dAyZ4Yl_0t_L0jG30OrzvjIUunY3JIviNiOX_p0-8jIchhx9QKAlB_CVhIvzPtCwBc4APkxvVNRZmbrX4fH04y_NxSu7ZePS8j2dAfqfZ1X6F5O2i6VqL96ZYKQFa99XGrjDp9Sc4LuxHd9eicYd2s_5wKxFhAX3uxlyjOFyY3jffaD4vA2lfwxP2tCq6ok8MF6fPxNWQ3ZOXH0eKd0hN80_pp3GXLPYvXw"
+          />
+          <div class="ml-2">
+            <p class="text-sm font-semibold text-[var(--text-primary)]">
+              Aisha Khan
+            </p>
+            <p class="text-xs text-[var(--text-secondary)]">
+              Counselor
+            </p>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Settings Sections -->
+    <div class="px-6 py-5 space-y-6">
+
+      <!-- Profile -->
+      <div>
+        <h3 class="text-[var(--text-primary)] text-lg font-bold mb-2">
+          Profile
+        </h3>
+        <div
+          class="flex items-center justify-between bg-[var(--bg-secondary)]
+                     px-4 py-3 rounded-lg"
+        >
+          <div class="flex items-center gap-4">
+            <img class="w-12 h-12 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnPCdbt7UO5R3pO1xIVLZUQ4e_yahC359Yq-OHBAv1dAyZ4Yl_0t_L0jG30OrzvjIUunY3JIviNiOX_p0-8jIchhx9QKAlB_CVhIvzPtCwBc4APkxvVNRZmbrX4fH04y_NxSu7ZePS8j2dAfqfZ1X6F5O2i6VqL96ZYKQFa99XGrjDp9Sc4LuxHd9eicYd2s_5wKxFhAX3uxlyjOFyY3jffaD4vA2lfwxP2tCq6ok8MF6fPxNWQ3ZOXH0eKd0hN80_pp3GXLPYvXw" alt="Counselor profile picture"/>
+            <div>
+              <p class="text-[var(--text-primary)] font-medium">
+                Edit Profile
+              </p>
+              <p class="text-[var(--text-secondary)] text-sm">
+                Manage your profile information
+              </p>
+            </div>
+          </div>
+          <span class="material-icons text-[var(--text-secondary)]">
+            chevron_right
+          </span>
+        </div>
+      </div>
+
+      <!-- Preferences -->
+      <div>
+        <h3 class="text-[var(--text-primary)] text-lg font-bold mb-2">
+          Preferences
+        </h3>
+        <div
+          class="flex items-center justify-between bg-[var(--bg-secondary)]
+                     px-4 py-3 rounded-lg mb-2"
+        >
+          <div>
+            <p class="text-[var(--text-primary)] font-medium">Language</p>
+            <p class="text-[var(--text-secondary)] text-sm">
+              Choose your preferred language
+            </p>
+          </div>
+          <p class="text-[var(--text-primary)]">English</p>
+        </div>
+        <div
+          class="flex items-center justify-between bg-[var(--bg-secondary)]
+                     px-4 py-3 rounded-lg"
+        >
+          <div>
+            <p class="text-[var(--text-primary)] font-medium">
+              Notifications
+            </p>
+            <p class="text-[var(--text-secondary)] text-sm">
+              Manage your notification settings
+            </p>
+          </div>
+          <span class="material-icons text-[var(--text-secondary)]">
+            chevron_right
+          </span>
+        </div>
+      </div>
+
+      <!-- Support -->
+      <div>
+        <h3 class="text-[var(--text-primary)] text-lg font-bold mb-2">
+          Support
+        </h3>
+        <div
+          class="flex items-center justify-between bg-[var(--bg-secondary)]
+                     px-4 py-3 rounded-lg"
+        >
+          <div>
+            <p class="text-[var(--text-primary)] font-medium">
+              Help Center
+            </p>
+            <p class="text-[var(--text-secondary)] text-sm">
+              Get help and support
+            </p>
+          </div>
+          <span class="material-icons text-[var(--text-secondary)]">
+            chevron_right
+          </span>
+        </div>
+      </div>
+
+      <!-- Additional sections (Terms, Privacy, Logout) follow the same pattern -->
+
+    </div>
+  </main>
+</body>
+</html>
